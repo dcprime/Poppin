@@ -1,0 +1,32 @@
+<div class='well'>
+  <%= form_for @user do |f| %>
+  <%= render 'shared/errors', obj: @user %>
+    <div class='form-group'>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <p>First and last name will be shown to people you invite to use Poppin</p>
+    <div class='form-group'>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <div class='form-group'>
+      <%= f.label :time_zone, 'Time Zone' %>
+      <%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones, default: Time.zone.name %>
+    </div>
+    <p>Were you invited by a friend to user Poppin? Enter their invite code below</p>
+    <div class='form-group'>
+      <%= label_tag 'invite_code' %>
+      <%= text_field_tag 'invite_code' %>
+    </div>
+  <%= f.submit (@user.new_record? ? "Register" : "Update Profile"), class: 'btn btn-success' %>
+  <% end %>
+</div>
