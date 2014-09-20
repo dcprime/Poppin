@@ -31,8 +31,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_path
   end
   
-  #def friend_exits? - Use to check if friendship is already in database & modify set_friends below
-  #end
+  def friendship_exits?
+    other_friend = User.find_by(invite_id: params[:invite_code])
+    Friendship.exists?(current_user.friendships.find_by(friend_id: other_friend.id))
+  end
   
   def set_friendship!
     other_friend = User.find_by(invite_id: params[:invite_code])

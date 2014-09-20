@@ -18498,3 +18498,457 @@ Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 17:
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff" for 135.23.124.217 at 2014-09-20 17:08:13 +0000
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = 'skldsgklsdf' LIMIT 1[0m
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"   ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 11 LIMIT 1[0m
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:44:57 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (50.0ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 740ms (Views: 703.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:58 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 18:44:59 +0000
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:45:10 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"772c34caea4a", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 7 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Exists (0.2ms)[0m  SELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 2 LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Redirected to 
+Completed 500 Internal Server Error in 20ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/friends_controller.rb:19:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.9ms)
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:46:10 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"772c34caea4a", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 7 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Exists (0.2ms)[0m  SELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 2 LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Redirected to 
+Completed 500 Internal Server Error in 20ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/friends_controller.rb:19:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.4ms)
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 141ms (Views: 131.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:27 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 18:46:28 +0000
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:46:35 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"772c34caea4a", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1[0m
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 7 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 2 LIMIT 1[0m
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Redirected to 
+Completed 500 Internal Server Error in 9ms
+
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  app/controllers/friends_controller.rb:19:in `create'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.6ms)
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 119ms (Views: 116.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 18:47:21 +0000
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (14.0ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 147ms (Views: 137.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:25 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:26 +0000
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:35 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"772c34caea4a", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '772c34caea4a' LIMIT 1[0m
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 7 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 2 LIMIT 1[0m
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:35 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 124ms (Views: 121.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:35 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:35 +0000
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:47 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"43de1d568833", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '43de1d568833' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '43de1d568833' LIMIT 1
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 8 LIMIT 1[0m  [["user_id", 6]]
+  [1m[35mFriendship Exists (0.1ms)[0m  SELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 9 LIMIT 1
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:47 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (3.6ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 110.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:47 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:47 +0000
+
+
+Started POST "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:56 +0000
+Processing by FriendsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/whFnBIQyCZnIP0bEmw44/YmTEBfz9K+wB0HQ/rserQ=", "invite_code"=>"1822b7cafc5a", "commit"=>"Add Friend", "user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '1822b7cafc5a' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."invite_id" = '1822b7cafc5a' LIMIT 1[0m
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships"  WHERE "friendships"."user_id" = ? AND "friendships"."friend_id" = 9 LIMIT 1  [["user_id", 6]]
+  [1m[36mFriendship Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "friendships"  WHERE "friendships"."id" = 11 LIMIT 1[0m
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6/friends
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/6/friends" for 135.23.124.217 at 2014-09-20 19:01:56 +0000
+Processing by FriendsController#index as HTML
+  Parameters: {"user_id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  Rendered friends/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 113ms (Views: 110.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:57 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-20 19:01:57 +0000
