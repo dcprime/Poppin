@@ -8,7 +8,15 @@ class FriendsController < ApplicationController
   end
   
   def create
-    
+    if User.find_by(invite_id: params[:invite_code]).class == User
+        set_friendship!
+        flash[:notice] = "Your friend has been added (see Friend's list below)"
+      elsif params[:invite_code].blank?
+        flash[:notice] = "No invite code entered - please try again"
+      else
+        flash[:notice] = "The invite code was not valid - please try again"
+      end
+    redirect_to :back
   end
   
   def destroy
