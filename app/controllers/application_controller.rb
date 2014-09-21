@@ -33,13 +33,20 @@ class ApplicationController < ActionController::Base
   
   def friendship_exits?
     other_friend = User.find_by(invite_id: params[:invite_code])
-    Friendship.exists?(current_user.friendships.find_by(friend_id: other_friend.id))
+    if Friendship.exists?(current_user.friendships.find_by(friend_id: other_friend.id))
+      return true
+    elsif
+      current_user == other_friend
+      return true
+    else
+      return false
+    end
   end
   
   def set_friendship!
     other_friend = User.find_by(invite_id: params[:invite_code])
-    @user.friends << other_friend
-    other_friend.friends << @user
+    current_user.friends << other_friend
+    other_friend.friends << current_user
   end
   
   def delete_friendship!

@@ -1,0 +1,5 @@
+<%= render 'shared/content_title', title: "All Friends Poppin Slots" %>
+
+<% @friends.each do |friend| %>
+<%= render 'shared/slots_display', title: "#{user_full_name(friend)}'s Poppin Slots", user: friend %>
+<% end %>

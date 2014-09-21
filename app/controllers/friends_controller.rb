@@ -1,10 +1,12 @@
 class FriendsController < ApplicationController
   
-  before_action :set_user
   before_action :require_user
-  before_action :require_same_user
   
   def index
+  end
+  
+  def all
+    @friends = current_user.friends
   end
   
   def create
@@ -22,16 +24,10 @@ class FriendsController < ApplicationController
     end
     redirect_to :back
   end
-  
+    
   def destroy
     delete_friendship!
     redirect_to :back
-  end
-  
-  private
-  
-  def set_user
-    @user = User.find(params[:user_id])
   end
   
 end

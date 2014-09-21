@@ -37,7 +37,7 @@
       </div>
       <div class="panel-body">
         <p>Enter your friend's invite code below</p>
-        <%= form_tag(user_friends_path(@user), method: "post") do |f| %>
+        <%= form_tag(user_friends_path(current_user.id), method: "post") do %>
         <div class='form-group'>
           <%= label_tag 'invite_code' %>
           <%= text_field_tag 'invite_code' %>
@@ -45,7 +45,6 @@
         <%= submit_tag 'Add Friend', class: 'btn btn-success' %>
       <% end %>
       </div>
-      
     </div>
   </div>
 </div>

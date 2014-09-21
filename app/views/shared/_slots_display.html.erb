@@ -1,0 +1,40 @@
+
+
+<div class="row">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= title %></h3>
+    </div>
+    <table class="table">
+      <tr>
+        <th>Day</th>
+        <th>From</th> 
+        <th>To</th>
+        <th>Description</th>
+        <% if @remove_buttons == true %>
+        <th></th>
+        <% end %>
+      </tr>
+      <% if user.slots.count == 0 %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><h4 id="faded">No slots have been created</h4></td>
+          <td></td>
+        </tr>
+      <% else %>
+        <% user.slots.each do |slot| %>
+          <tr>
+            <td><%= slot.day %></td>
+            <td><%= slot.start_time %></td> 
+            <td><%= slot.end_time %></td>
+            <td><%= slot.label %></td>
+            <% if @remove_buttons == true %>
+            <td><%= link_to 'Remove', slot_path(slot), method: 'delete', class: 'btn btn-danger btn-sm' %></td>
+            <% end %>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+</div>

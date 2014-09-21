@@ -1,2 +1,8 @@
 <%= render 'shared/content_title', title: "#{user_full_name(@user)}'s Poppin Slots" %>
 
+<%= render 'shared/slots_display', title: "#{user_full_name(@user)}'s Poppin Slots", user: @user %>
+
+<% if @user == current_user %>
+  <br/>
+<%= link_to 'Add/Remove Slots', slots_path, class: 'btn btn-primary' %>
+<% end %>

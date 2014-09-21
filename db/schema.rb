@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140918133403) do
+ActiveRecord::Schema.define(version: 20140921010833) do
 
   create_table "friendships", force: true do |t|
     t.integer  "user_id"
@@ -22,11 +22,12 @@ ActiveRecord::Schema.define(version: 20140918133403) do
 
   create_table "slots", force: true do |t|
     t.string   "label"
-    t.datetime "slot_start"
-    t.datetime "slot_end"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "day"
+    t.string   "start_time"
+    t.string   "end_time"
   end
 
   create_table "users", force: true do |t|

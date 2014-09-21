@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
   
   def show
+    @remove_buttons = false
   end
   
   def create

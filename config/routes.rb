@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
+  get '/friends/all', to: 'friends#all'
 
   resources :users, only: [:show, :create, :edit, :update] do
     resources :friends, only: [:index, :create, :destroy]
   end
   
-  resources :slots, only: [:index, :create, :update]
+  resources :slots, except: [:show, :new]
   
   # Example resource route within a namespace:
   #   namespace :admin do
