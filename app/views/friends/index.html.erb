@@ -6,24 +6,29 @@
       <h3 class="panel-title">Your Friends List</h3>
     </div>
     <div class="panel-body">
-      <p>View your friends' <strong>Poppin slots</strong> by clicking <button type="button" class="btn btn-success btn-xs">View Slots</button></p>
-      <p>Remove friends from your <strong>Friends List</strong> by clicking <button type="button" class="btn btn-danger btn-xs">Remove Friend</button></p>
-    </div>
-    <table class="table">
-      <% current_user.friends.each do |friend| %>
-      <tr>
-        <td>
-          <%= user_full_name(friend) %>
-        </td>
-        <td>
-          <div class="pull-right">
-            <%= link_to 'View Slots', user_path(friend), class: 'btn btn-success btn-xs' %>
-            <%= link_to 'Remove Friend', user_friend_path(current_user, friend), class: 'btn btn-danger btn-xs col-md-offset-1', :data => {:confirm => "Are you sure? You will be removed from #{user_full_name(friend)}'s Friends List as well..."}, method: 'delete' %>
-          </div>
-        </td>
-      </tr>
-      <% end %>
-    </table>
+      <% if current_user.friends.count == 0 %>
+        <h4 id="faded">No friends have been added</h4>
+        </div>
+      <% else %>
+        <p>View your friends' <strong>Poppin slots</strong> by clicking <button type="button" class="btn btn-success btn-xs">View Slots</button></p>
+        <p>Remove friends from your <strong>Friends List</strong> by clicking <button type="button" class="btn btn-danger btn-xs">Remove Friend</button></p>
+      </div>
+      <table class="table">
+        <% current_user.friends.each do |friend| %>
+          <tr>
+            <td>
+              <%= user_full_name(friend) %>
+            </td>
+            <td>
+              <div class="pull-right">
+                <%= link_to 'View Slots', user_path(friend), class: 'btn btn-success btn-xs' %>
+                <%= link_to 'Remove Friend', user_friend_path(current_user, friend), class: 'btn btn-danger btn-xs col-md-offset-1', :data => {:confirm => "Are you sure? You will be removed from #{user_full_name(friend)}'s Friends List as well..."}, method: 'delete' %>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
   </div>
 </div>
 

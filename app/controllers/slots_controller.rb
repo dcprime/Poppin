@@ -1,5 +1,7 @@
 class SlotsController < ApplicationController
   
+  before_action :require_user
+  
   def index
     @slot = Slot.new
     @remove_buttons = true

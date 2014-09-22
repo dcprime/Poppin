@@ -1,5 +1,12 @@
 <%= render 'shared/content_title', title: "#{user_full_name(current_user)}'s Friends Poppin Slots" %>
 
-<% @friends.each do |friend| %>
-<%= render 'shared/slots_display', title: "#{user_full_name(friend)}'s Poppin Slots", times: sort_slots(friend) %>
+<% if current_user.friends.count == 0 %>
+<%= render 'shared/no_friends' %>
+    <br/>
+    &nbsp;
+  <%= link_to 'Manage Friends', user_friends_path(current_user), class: 'btn btn-danger' %>
+<% else %>
+  <% @friends.each do |friend| %>
+    <%= render 'shared/slots_display', title: "#{user_full_name(friend)}'s Poppin Slots", times: sort_slots(friend) %>
+  <% end %>
 <% end %>

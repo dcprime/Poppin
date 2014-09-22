@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
-  before_action :require_user, only: [:edit, :update]
+  before_action :require_user, only: [:edit, :update, :show]
   before_action :require_same_user, only: [:edit, :update]
   
   def new
@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   def show
     @remove_buttons = false
     @all_slots = sort_slots(@user)
+    unless current_user.friends.include?(@user) || current_user == @user
+      flash[:notice] = 'Sorry, that person is not your friend'
+      redirect_to user_path(current_user)
+    end
   end
   
   def create

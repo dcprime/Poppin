@@ -46,14 +46,16 @@
             View All
             <% end %>
         </li>
+        <% if current_user.friends.count > 0 %>
         <li class="divider"></li>
-        <% current_user.friends.each do |friend| %>
-          <li>
-            <%= link_to user_path(friend) do %> 
-            <span class="glyphicon glyphicon-user"></span>
-            <%= user_full_name(friend) %>
-            <% end %>
-          </li>
+          <% current_user.friends.each do |friend| %>
+            <li>
+              <%= link_to user_path(friend) do %> 
+              <span class="glyphicon glyphicon-user"></span>
+              <%= user_full_name(friend) %>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
         <li class="divider"></li>
         <li>
