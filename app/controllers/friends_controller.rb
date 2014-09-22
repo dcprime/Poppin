@@ -6,7 +6,7 @@ class FriendsController < ApplicationController
   end
   
   def all
-    @friends = current_user.friends
+    @friends = current_user.friends.sort_by {|friend| friend.first_name }
   end
   
   def create

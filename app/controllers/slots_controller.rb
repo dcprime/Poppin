@@ -4,6 +4,7 @@ class SlotsController < ApplicationController
     @slot = Slot.new
     @remove_buttons = true
     @user = current_user
+    @all_slots = sort_slots(current_user)
   end
   
   def create

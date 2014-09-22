@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   
   def show
     @remove_buttons = false
+    @all_slots = sort_slots(@user)
   end
   
   def create

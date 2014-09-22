@@ -2,7 +2,7 @@
 
 <%= render 'shared/errors', obj: @slot %>
 
-<%= render 'shared/slots_display', title: "#{user_full_name(@user)}'s Poppin Slots", user: @user %>
+<%= render 'shared/slots_display', title: "#{user_full_name(@user)}'s Poppin Slots", times: @all_slots %>
 <br/>
 
 <div class="row">
@@ -16,24 +16,24 @@
           <%= f.label :day_select do %>
           <h4>Select a day</h4>
           <div class="radio">
-            <label><%= f.radio_button :day, 'Mondays' %>
-            Mondays &nbsp;</label>
-            <label class="radio-inline"><%= f.radio_button :day, 'Tuesdays' %>
-            Tuesdays &nbsp;</label>
-            <label class="radio-inline"><%= f.radio_button :day, 'Wednesdays' %>
-            Wednesdays</label>
+            <label><%= f.radio_button :day, 'Sunday' %>
+            Sunday &nbsp;</label>
+            <label class="radio-inline"><%= f.radio_button :day, 'Monday' %>
+            Monday &nbsp;</label>
+            <label class="radio-inline"><%= f.radio_button :day, 'Tuesday' %>
+            Tuesday</label>
           </div>
           <div class="radio">
-            <label><%= f.radio_button :day, 'Thursdays' %>
-            Thursdays &nbsp;</label>
-            <label class="radio-inline"><%= f.radio_button :day, 'Fridays' %>
-            Fridays &nbsp;</label>
-            <label class="radio-inline"><%= f.radio_button :day, 'Saturdays' %>
-            Saturdays</label>
+            <label><%= f.radio_button :day, 'Wednesday' %>
+            Wednesday &nbsp;</label>
+            <label class="radio-inline"><%= f.radio_button :day, 'Thursday' %>
+            Thursday &nbsp;</label>
+            <label class="radio-inline"><%= f.radio_button :day, 'Friday' %>
+            Friday</label>
           </div>
           <div class="radio">
-            <label><%= f.radio_button :day, 'Sundays' %>
-            Sundays</label>
+            <label><%= f.radio_button :day, 'Saturday' %>
+            Saturday</label>
           </div>
           <% end %>
         </div>

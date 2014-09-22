@@ -1,64 +1,58 @@
 <%= render 'shared/content_title', title: "Manage Poppin Friends" %>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Your Friends List</h3>
-      </div>
-      <div class="panel-body">
-        <p>View your friends' <strong>Poppin slots</strong> by clicking <button type="button" class="btn btn-success btn-xs">View Slots</button></p>
-        <p>Remove friends from your <strong>Friends List</strong> by clicking <button type="button" class="btn btn-danger btn-xs">Remove Friend</button></p>
-      </div>
-      <table class="table">
-        <% current_user.friends.each do |friend| %>
-        <tr>
-          <td>
-            <%= user_full_name(friend) %>
-          </td>
-          <td>
-            <div class="pull-right">
-              <%= link_to 'View Slots', user_path(friend), class: 'btn btn-success btn-xs' %>
-              <%= link_to 'Remove Friend', user_friend_path(current_user, friend), class: 'btn btn-danger btn-xs col-md-offset-1', :data => {:confirm => "Are you sure? You will be removed from #{user_full_name(friend)}'s Friends List as well..."}, method: 'delete' %>
-            </div>
-          </td>
-        </tr>
-        <% end %>
-      </table>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Your Friends List</h3>
     </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Add a New Friend</h3>
-      </div>
-      <div class="panel-body">
-        <p>Enter your friend's invite code below</p>
-        <%= form_tag(user_friends_path(current_user.id), method: "post") do %>
-        <div class='form-group'>
-          <%= label_tag 'invite_code' %>
-          <%= text_field_tag 'invite_code' %>
-        </div>
-        <%= submit_tag 'Add Friend', class: 'btn btn-success' %>
+    <div class="panel-body">
+      <p>View your friends' <strong>Poppin slots</strong> by clicking <button type="button" class="btn btn-success btn-xs">View Slots</button></p>
+      <p>Remove friends from your <strong>Friends List</strong> by clicking <button type="button" class="btn btn-danger btn-xs">Remove Friend</button></p>
+    </div>
+    <table class="table">
+      <% current_user.friends.each do |friend| %>
+      <tr>
+        <td>
+          <%= user_full_name(friend) %>
+        </td>
+        <td>
+          <div class="pull-right">
+            <%= link_to 'View Slots', user_path(friend), class: 'btn btn-success btn-xs' %>
+            <%= link_to 'Remove Friend', user_friend_path(current_user, friend), class: 'btn btn-danger btn-xs col-md-offset-1', :data => {:confirm => "Are you sure? You will be removed from #{user_full_name(friend)}'s Friends List as well..."}, method: 'delete' %>
+          </div>
+        </td>
+      </tr>
       <% end %>
+    </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add a New Friend</h3>
+    </div>
+    <div class="panel-body">
+      <p>Enter your friend's invite code below</p>
+      <%= form_tag(user_friends_path(current_user.id), method: "post") do %>
+      <div class='form-group'>
+        <%= label_tag 'invite_code' %>
+        <%= text_field_tag 'invite_code' %>
       </div>
+      <%= submit_tag 'Add Friend', class: 'btn btn-success' %>
+      <% end %>
     </div>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">Invite a Friend</h3>
-      </div>
-      <div class="panel-body">
-        <h4>To invite a friend to use Poppin, email them your invite code</h4>
-        <p>Your invite code is: <strong><%=current_user.invite_id %></strong></p>
-      </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Invite a Friend</h3>
+    </div>
+    <div class="panel-body">
+      <h4>To invite a friend to use Poppin, email them your invite code</h4>
+      <p>Your invite code is: <strong><%=current_user.invite_id %></strong></p>
     </div>
   </div>
 </div>

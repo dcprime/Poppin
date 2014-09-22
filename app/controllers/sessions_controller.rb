@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
   
   def new
+    if logged_in?
+      redirect_to user_path(current_user)
+    end
   end
   
   def create
@@ -24,7 +27,7 @@ class SessionsController < ApplicationController
   def login_user!(user)
     session[:user_id] = user.id
     flash[:notice] = "You have been logged in"
-    redirect_to user_path(current_user.id)
+    redirect_to user_path(current_user)
   end
    
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :friends, only: [:index, :create, :destroy]
   end
   
-  resources :slots, except: [:show, :new]
+  resources :slots, only: [:index, :create, :destroy]
   
   # Example resource route within a namespace:
   #   namespace :admin do

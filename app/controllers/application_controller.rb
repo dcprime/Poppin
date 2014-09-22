@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :sort_slots
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -55,6 +55,10 @@ class ApplicationController < ActionController::Base
     friendship_2 = friend.friendships.find_by(friend_id: params[:user_id])
     friendship_1.destroy
     friendship_2.destroy
+  end
+  
+  def sort_slots(user)
+    user.slots.sort_by {|slot| Date::DAYNAMES.index(slot.day)}
   end
   
 end

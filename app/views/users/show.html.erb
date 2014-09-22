@@ -1,8 +1,25 @@
 <%= render 'shared/content_title', title: "#{user_full_name(@user)}'s Poppin Slots" %>
 
-<%= render 'shared/slots_display', title: "#{user_full_name(@user)}'s Poppin Slots", user: @user %>
+<%= render 'shared/slots_display', title: "#{user_full_name(@user)}'s Poppin Slots", times: @all_slots %>
+
+<br/>
 
 <% if @user == current_user %>
-  <br/>
-<%= link_to 'Add/Remove Slots', slots_path, class: 'btn btn-primary' %>
+  <% if current_user.slots.count == 0 %>
+    <div class="well">
+      <h4>You haven't created any Poppin slots yet</h4>
+      <p>Click on the <strong>Add/Remove Slots</strong> button below to create some</p>
+    </div>
+    <br/>
+  <% end %>
+  <% if current_user.friends.count == 0 %>
+    <div class="well">
+      <h4>You haven't added any Poppin friends yet</h4>
+      <p>Click on the <strong>Manage Friends</strong> button below or in the <strong>Menu Bar</strong> above to add some</p>
+    </div>
+    <br/>
+  <% end %>
+  <%= link_to 'Add/Remove Slots', slots_path, class: 'btn btn-primary' %> 
+  &nbsp;
+  <%= link_to 'Manage Friends', user_friends_path(current_user), class: 'btn btn-danger' %>
 <% end %>
