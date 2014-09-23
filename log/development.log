@@ -49800,3 +49800,368 @@ Processing by SessionsController#new as HTML
   Rendered layouts/_navigation.html.erb (0.3ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 118ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 13:23:37 +0000
+
+PG::Error (could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `initialize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `new'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `connect'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.0) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.0) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.0) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.0) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.3ms)
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 13:24:13 +0000
+
+PG::Error (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `initialize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `new'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:881:in `connect'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:568:in `initialize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `new'
+  activerecord (4.1.0) lib/active_record/connection_adapters/postgresql_adapter.rb:41:in `postgresql_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+  activerecord (4.1.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+  activerecord (4.1.0) lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+  activerecord (4.1.0) lib/active_record/connection_handling.rb:87:in `connection'
+  activerecord (4.1.0) lib/active_record/migration.rb:388:in `check_pending!'
+  activerecord (4.1.0) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.0) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.0) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.0) lib/rails/engine.rb:514:in `call'
+  railties (4.1.0) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/action/.parts/packages/ruby2.1/2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/action/.gem/ruby/2.1.1/gems/actionpack-4.1.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 14:10:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 652ms (Views: 628.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-23 14:10:56 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:56 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:56 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:56 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:56 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-23 14:10:57 +0000
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 17:24:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 622ms (Views: 594.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-23 17:24:38 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-23 17:24:39 +0000
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 19:54:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 748ms (Views: 726.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 135.23.124.217 at 2014-09-23 19:54:02 +0000
+
+
+Started GET "/assets/jquery.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:02 +0000
+
+
+Started GET "/assets/turbolinks.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/affix.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/alert.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/button.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/carousel.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/collapse.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/dropdown.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/tab.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/transition.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/scrollspy.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/modal.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/tooltip.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap/popover.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:03 +0000
+
+
+Started POST "/login" for 135.23.124.217 at 2014-09-23 19:54:12 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"v/jEJO2tui6ps+hzYgc69ZzoM9QEKWmKUEGJGCA0cgc=", "username"=>"dcprime", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."username" = 'dcprime' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/users/6
+Completed 302 Found in 212ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/6" for 135.23.124.217 at 2014-09-23 19:54:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSlot Load (0.3ms)[0m  SELECT "slots".* FROM "slots"  WHERE "slots"."user_id" = ?  [["user_id", 6]]
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ? AND "users"."id" = 6 LIMIT 1[0m  [["user_id", 6]]
+  Rendered shared/_content_title.html.erb (0.1ms)
+  Rendered shared/_slots_display.html.erb (1.0ms)
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "slots"  WHERE "slots"."user_id" = ?  [["user_id", 6]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered users/show.html.erb within layouts/application (7.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?[0m  [["user_id", 6]]
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 203ms (Views: 128.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:13 +0000
+
+
+Started GET "/assets/application.js?body=1" for 135.23.124.217 at 2014-09-23 19:54:13 +0000
+
+
+Started GET "/logout" for 135.23.124.217 at 2014-09-23 19:54:22 +0000
+Processing by SessionsController#destroy as HTML
+Redirected to http://tealeaf-rails1-132653.use1-2.nitrousbox.com/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 135.23.124.217 at 2014-09-23 19:54:23 +0000
+Processing by SessionsController#new as HTML
+  Rendered shared/_content_title.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 116ms (Views: 115.0ms | ActiveRecord: 0.0ms)
