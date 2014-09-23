@@ -19,7 +19,6 @@ gem 'autoprefixer-rails'
 gem 'bcrypt', '~> 3.1.7'
 
 group :development do
-  gem 'pry', '~> 0.10.1'
   gem 'sqlite3'
 end
 
